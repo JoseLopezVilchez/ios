@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6dZ-Zn-NkU">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="ia5-M3-tHT">
+            <objects>
+                <navigationController id="6dZ-Zn-NkU" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4Iq-Xg-Ilg">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="oID-j7-pBT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="USF-SG-Sd4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1617" y="-16"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TablaCiudadesConFiltroYOpcionDeCompartir_JoseLopezVilchez" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="i2a-Qb-gE7">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <color key="backgroundColor" red="1" green="0.61879783160000001" blue="0.58083545920000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Celda" rowHeight="200" id="866-Dx-VTb" customClass="Celda" customModule="TablaCiudadesConFiltroYOpcionDeCompartir_JoseLopezVilchez" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="866-Dx-VTb" id="4I0-YY-lWQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Linares" translatesAutoresizingMaskIntoConstraints="NO" id="hkK-li-Jft">
+                                                    <rect key="frame" x="20" y="10" width="353" height="180"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uoi-RP-G5v">
+                                                    <rect key="frame" x="20" y="11" width="353" height="178"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.2516556291" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="hkK-li-Jft" firstAttribute="leading" secondItem="4I0-YY-lWQ" secondAttribute="leading" constant="20" id="5fg-9C-Sps"/>
+                                                <constraint firstAttribute="trailing" secondItem="hkK-li-Jft" secondAttribute="trailing" constant="20" id="Dai-F2-vn5"/>
+                                                <constraint firstItem="Uoi-RP-G5v" firstAttribute="leading" secondItem="4I0-YY-lWQ" secondAttribute="leadingMargin" id="LHd-CR-xJN"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Uoi-RP-G5v" secondAttribute="trailing" id="Nr4-sa-fP3"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Uoi-RP-G5v" secondAttribute="bottom" id="aNj-mt-DP2"/>
+                                                <constraint firstAttribute="bottom" secondItem="hkK-li-Jft" secondAttribute="bottom" constant="10" id="gXp-g1-CiH"/>
+                                                <constraint firstItem="Uoi-RP-G5v" firstAttribute="top" secondItem="4I0-YY-lWQ" secondAttribute="topMargin" id="rFx-Ox-BkU"/>
+                                                <constraint firstItem="hkK-li-Jft" firstAttribute="top" secondItem="4I0-YY-lWQ" secondAttribute="top" constant="10" id="rtt-69-fpu"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="0.61879783160000001" blue="0.58083545920000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="imgV" destination="hkK-li-Jft" id="BnI-4A-cmM"/>
+                                            <outlet property="label" destination="Uoi-RP-G5v" id="eMi-7T-GqE"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="1" green="0.61879783163265312" blue="0.58083545918367352" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="i2a-Qb-gE7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GYe-ET-llJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="i2a-Qb-gE7" secondAttribute="trailing" id="ZpY-m6-ett"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="i2a-Qb-gE7" secondAttribute="bottom" id="ad6-KJ-bwq"/>
+                            <constraint firstItem="i2a-Qb-gE7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dfQ-wp-JR1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="INA-DQ-PYK"/>
+                    <connections>
+                        <outlet property="tabla" destination="i2a-Qb-gE7" id="OTf-eA-pEE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-491" y="-16"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Linares" width="80" height="60"/>
+    </resources>
+</document>

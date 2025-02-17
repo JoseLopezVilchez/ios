@@ -1,0 +1,14 @@
+{
+    "aps" : {
+        "alert" : {
+            "title" : "Titulo de la notificacion",
+            "body" : "Este es el mensaje de la notificacion"
+        },
+        "sound" : "default",
+        "badge" : 17,
+        
+    },
+    
+    "contacto" : "234876",
+    
+}
