@@ -20,13 +20,42 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="G3c-kw-vxh">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Celda" id="G3c-kw-vxh" customClass="Celda" customModule="AppDeNotas" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="34.333332061767578"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="G3c-kw-vxh" id="ZQj-hC-XsI">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="34.333332061767578"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NQj-Uy-qfE">
+                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="34.333333333333336"/>
+                                                    <subviews>
+                                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fez-ry-NRB">
+                                                            <rect key="frame" x="0.0" y="0.0" width="243.33333333333334" height="34.333333333333336"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                        </textField>
+                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" title="Hecha?" translatesAutoresizingMaskIntoConstraints="NO" id="0GO-gN-3rf">
+                                                            <rect key="frame" x="243.33333333333337" y="0.0" width="51" height="34.333333333333336"/>
+                                                        </switch>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A9z-sm-HZ6">
+                                                            <rect key="frame" x="292.33333333333331" y="0.0" width="100.66666666666669" height="34.333333333333336"/>
+                                                            <state key="normal" title="Button"/>
+                                                            <buttonConfiguration key="configuration" style="plain" title="Compartir"/>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="NQj-Uy-qfE" secondAttribute="trailing" id="GdF-T4-8Rk"/>
+                                                <constraint firstItem="NQj-Uy-qfE" firstAttribute="top" secondItem="ZQj-hC-XsI" secondAttribute="top" id="Z7o-8P-r1I"/>
+                                                <constraint firstItem="NQj-Uy-qfE" firstAttribute="leading" secondItem="ZQj-hC-XsI" secondAttribute="leading" id="fZk-ZJ-MY9"/>
+                                                <constraint firstAttribute="bottom" secondItem="NQj-Uy-qfE" secondAttribute="bottom" id="kzP-VH-LFS"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="texto" destination="fez-ry-NRB" id="5Ty-AE-aEQ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -42,15 +71,23 @@
                     </view>
                     <navigationItem key="navigationItem" id="LJX-J2-V7A">
                         <rightBarButtonItems>
-                            <barButtonItem title="Item" image="plus" catalog="system" id="N2F-MX-vQi"/>
+                            <barButtonItem title="Item" image="plus" catalog="system" id="N2F-MX-vQi">
+                                <connections>
+                                    <action selector="nuevaNota:" destination="BYZ-38-t0r" id="6C2-sT-obp"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem style="plain" id="BBh-hj-PQX">
-                                <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="lzq-su-FK8">
+                                <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="lzq-su-FK8">
                                     <rect key="frame" x="284" y="6.6666666666666679" width="51" height="31.000000000000004"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </switch>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="switchFilter" destination="BBh-hj-PQX" id="fBT-Ce-xaI"/>
+                        <outlet property="tableView" destination="LDq-6C-bvX" id="u2q-f6-bhJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
