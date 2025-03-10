@@ -8,8 +8,9 @@
 
 import SwiftUI
 
-class Order {
-    var items = [MenuItem]()
+class Order : ObservableObject {
+    
+    @Published var items = [MenuItem]()
 
     var total: Int {
         if items.count > 0 {
@@ -17,6 +18,10 @@ class Order {
         } else {
             return 0
         }
+    }
+    
+    func getTotalPrice (propina : Int) -> String {
+        return "\(Double(self.total) + (Double(self.total) * Double(propina) / 100.0))";
     }
 
     func add(item: MenuItem) {
@@ -27,5 +32,13 @@ class Order {
         if let index = items.firstIndex(of: item) {
             items.remove(at: index)
         }
+    }
+    
+    func removeAll () {
+        items.removeAll();
+    }
+    
+    func deleteItems (at offset : IndexSet) {
+        self.items.remove(atOffsets: offset);
     }
 }

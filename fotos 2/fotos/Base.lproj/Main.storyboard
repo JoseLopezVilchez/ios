@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="fotos" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SCW-U7-1VB">
+                                <rect key="frame" x="22" y="116" width="349" height="349"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="SCW-U7-1VB" secondAttribute="height" multiplier="1:1" id="i8j-01-s7A"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zsy-i7-cCD">
+                                <rect key="frame" x="22" y="501" width="163" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Foto"/>
+                                <connections>
+                                    <action selector="fotoBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6L7-5Q-8Nk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kkp-Zp-jJc">
+                                <rect key="frame" x="193" y="501" width="178" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Galería"/>
+                                <connections>
+                                    <action selector="galeryBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YBT-VC-bDv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7c-xO-kYA">
+                                <rect key="frame" x="114.66666666666669" y="596" width="164" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Guardar en galería"/>
+                                <connections>
+                                    <action selector="guardarBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CNI-82-lKD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="w7c-xO-kYA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="47m-4g-Akh"/>
+                            <constraint firstItem="Zsy-i7-cCD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="22" id="8DN-4p-hA4"/>
+                            <constraint firstItem="SCW-U7-1VB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="22" id="9J1-bt-kNS"/>
+                            <constraint firstItem="Zsy-i7-cCD" firstAttribute="width" secondItem="SCW-U7-1VB" secondAttribute="width" multiplier="0.467049" id="B4J-n9-LuG"/>
+                            <constraint firstItem="kkp-Zp-jJc" firstAttribute="top" secondItem="SCW-U7-1VB" secondAttribute="bottom" constant="36" id="Wnu-2s-ZPr"/>
+                            <constraint firstItem="w7c-xO-kYA" firstAttribute="top" secondItem="Zsy-i7-cCD" secondAttribute="bottom" constant="60" id="b57-Vm-WK0"/>
+                            <constraint firstItem="kkp-Zp-jJc" firstAttribute="width" secondItem="SCW-U7-1VB" secondAttribute="width" multiplier="0.510029" id="bDu-Yj-7Dh"/>
+                            <constraint firstItem="SCW-U7-1VB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gVZ-Cn-hGG"/>
+                            <constraint firstItem="kkp-Zp-jJc" firstAttribute="leading" secondItem="Zsy-i7-cCD" secondAttribute="trailing" constant="8" symbolic="YES" id="mSB-OY-alU"/>
+                            <constraint firstItem="SCW-U7-1VB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="57" id="qOg-lP-5Te"/>
+                            <constraint firstItem="Zsy-i7-cCD" firstAttribute="top" secondItem="SCW-U7-1VB" secondAttribute="bottom" constant="36" id="vLl-uJ-Geg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kkp-Zp-jJc" secondAttribute="trailing" constant="22" id="vi9-XL-DsP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SCW-U7-1VB" secondAttribute="trailing" constant="22" id="yeF-GI-Kaz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="SCW-U7-1VB" id="rDT-Hn-2f2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139.69465648854961" y="-2.1126760563380285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
