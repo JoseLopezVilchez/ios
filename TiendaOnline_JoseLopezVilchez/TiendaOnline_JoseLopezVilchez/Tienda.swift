@@ -17,11 +17,20 @@ struct Tienda: View {
     @EnvironmentObject var productos : ListaProductos;
     @EnvironmentObject var carrito : ListaCompra;
     @AppStorage("favoritos") var favoritos = "";
+    @State var categoriaSeleccionada : String = "";
     
     var body: some View {
+        
+        Picker("Categoría", selection: $categoriaSeleccionada) {
+            ForEach(productos.categorias, id: \.self) {
+                Text($0)
+            }
+        }
+        .pickerStyle(.wheel)
+        
         NavigationStack {
             List {
-                ForEach(productos.productos) { item in
+                ForEach(productos.filtro(categoria: [categoriaSeleccionada])) { item in
                     NavigationLink(value: item) {
                         Celda(producto: item)
                             .swipeActions (edge: .leading) {
@@ -32,12 +41,11 @@ struct Tienda: View {
                             }
                             .swipeActions (edge: .trailing) {
                                 Button ("Favorito") {
-                                    var fav = favoritos.split(separator: ",");
-                                    if let index = fav.firstIndex(where: { $0 == "\(item.id)" }) {
-                                        fav.remove(at: index);
-                                        favoritos = fav.joined(separator: ",");
-                                    } else {
-                                        favoritos.append(",\(item.id)");
+                                    var lista = decode(json: favoritos);
+                                    
+                                    if (!lista.contains(item.id)) {
+                                        lista.append(item.id);
+                                        favoritos = encode(listado: lista);
                                     }
                                 }
                                 .tint(.yellow)

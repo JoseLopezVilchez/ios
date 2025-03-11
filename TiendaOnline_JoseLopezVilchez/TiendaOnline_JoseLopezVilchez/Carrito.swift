@@ -27,6 +27,7 @@ struct Carrito: View {
                             }
                             .tint(.red)
                         }
+                    Text("Cantidad: \(item.cantidad)")
                 } else {
                     Text("Su carrito está vacío")
                 }
@@ -34,6 +35,8 @@ struct Carrito: View {
         }
         .navigationTitle("Carrito")
         .listStyle(.insetGrouped)
+        
+        Text("Precio total: \(String(format: "%.2f", carrito.precioTotal))")
     }
 }
 

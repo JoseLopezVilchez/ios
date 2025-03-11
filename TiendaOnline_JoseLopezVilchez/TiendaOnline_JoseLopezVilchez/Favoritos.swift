@@ -14,7 +14,7 @@ struct Favoritos: View {
     
     var body: some View {
         List {
-            ForEach (favSplitter(favoritos: favoritos), id: \.self) { item in
+            ForEach (decode(json: favoritos), id: \.self) { item in
                 
                 if (productos.contains(idProducto: item)) {
                     
@@ -23,13 +23,16 @@ struct Favoritos: View {
                     Celda(producto: producto)
                         .swipeActions (edge: .leading) {
                             Button ("Eliminar") {
-                                var fav = favoritos.split(separator: ",");
+                                /*var fav = favoritos.split(separator: ",");
                                 if let index = fav.firstIndex(where: { $0 == "\(item.id)" }) {
                                     fav.remove(at: index);
                                     favoritos = fav.joined(separator: ",");
                                 } else {
                                     favoritos.append(",\(item.id)");
-                                }
+                                }*/
+                                var lista = decode(json: favoritos);
+                                lista.removeAll(where: { item == $0 });
+                                favoritos = encode(listado: lista);
                             }
                             .tint(.red)
                         }
@@ -40,14 +43,26 @@ struct Favoritos: View {
         }
         .navigationTitle("Carrito")
         .listStyle(.insetGrouped)
-    }
+    }    
+}
+
+func decode(json : String) -> [Int] {
     
-    func favSplitter (favoritos : String) -> [Int] {
-        let substrArray = favoritos.split(separator: ",");
-        let strArray : [String] = substrArray.map({String($0)});
-        let intArray : [Int] = strArray.map { Int($0)! };
-        return intArray;
+    let decoder = JSONDecoder();
+    if let jsonData = json.data(using: .utf8) {
+        if let decodedList = try? decoder.decode([Int].self, from: jsonData) {
+            return decodedList
+        }
     }
+    return [];
+}
+
+func encode (listado : [Int]) -> String {
+    
+    if let jsonData = try? JSONEncoder().encode(listado), let jsonString = String(data: jsonData, encoding: .utf8) {
+        return jsonString;
+    }
+    return "";
 }
 
 #Preview {

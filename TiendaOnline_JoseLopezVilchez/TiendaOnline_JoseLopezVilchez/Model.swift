@@ -38,4 +38,33 @@ struct Rating : Decodable, Hashable {
 struct EntradaListaCompra : Decodable, Identifiable {
     let id : Int;
     var cantidad : Int;
+    let precio : Double;
+    
+    var total : Double {
+        get {
+            return Double(cantidad) * precio;
+        }
+    }
 }
+
+/*struct FavList : Decodable, CustomStringConvertible {
+    
+    public var favoritos : [Int];
+    
+    public static func contains(json : String) -> FavList {
+        
+        let decoder = JSONDecoder();
+        if let jsonData = json.data(using: .utf8) {
+            if let decodedList = try? decoder.decode(FavList.self, from: jsonData) {
+                return decodedList
+            }
+        }
+        return FavList(favoritos: []);
+    }
+    
+    public var description: String {
+        get {
+            return favoritos.reduce("") { $0 + "\($1)," }
+        }
+    }
+}*/
